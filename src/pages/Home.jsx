@@ -7,7 +7,7 @@ import { Navbar } from "../components/layout/Navbar";
 import { Footer } from "../components/layout/Footer";
 import { StarBackground } from "../components/ui/StarBackground";
 import { Certificates } from "../components/sections/Certificates";
-import { SmartScrollIndicator } from "../components/layout/ScrollIndicator";
+import { SmartScrollIndicator } from "../components/ui/ScrollIndicator";
 
 export const Home = () => {
   return (
