@@ -1,4 +1,4 @@
-<img width="921" height="416" alt="image" src="https://github.com/user-attachments/assets/91515ec7-7103-4c4f-9636-450199c96c3f" />
+
 
 A modern, responsive portfolio website showcasing my work in AI/ML, IoT systems, and full-stack development.
 
