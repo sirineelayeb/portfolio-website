@@ -1,0 +1,342 @@
+/* ============================================================
+   1. TAILWIND IMPORT
+============================================================ */
+@import "tailwindcss";
+
+/* ============================================================
+   2. THEME VARIABLES – Light & Dark Mode
+============================================================ */
+:root {
+  --foreground: #1e293b;
+  --background: #ffffff;
+
+  --primary: #8b5cf6;
+  --secondary: #06b6d4;
+  --accent: #f3c472;
+
+  --border: #e2e8f0;
+  --card-bg: #ffffff;
+  --shadow: rgba(0, 0, 0, 0.1);
+
+  --shadow-soft: 0 4px 15px var(--shadow);
+  --shadow-medium: 0 10px 30px var(--shadow);
+  --shadow-hard: 0 20px 50px var(--shadow);
+}
+
+.dark {
+  --foreground: #f1f5f9;
+  --background: #0f172a;
+
+  --primary: #a78bfa;
+  --secondary: #22d3ee;
+  --accent: #fbbf24;
+
+  --border: #334155;
+  --card-bg: #1e293b;
+  --shadow: rgba(0, 0, 0, 0.6);
+
+  --shadow-soft: 0 6px 20px rgba(0, 0, 0, 0.5);
+  --shadow-medium: 0 12px 40px rgba(0, 0, 0, 0.6);
+  --shadow-hard: 0 25px 70px rgba(0, 0, 0, 0.7);
+}
+
+/* ============================================================
+   3. STARRY BACKGROUND – ALWAYS VISIBLE (Light & Dark)
+============================================================ */
+.star {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  will-change: opacity, transform;
+  background: #1e293b;                    /* Dark base for light mode */
+  box-shadow: 0 0 14px 4px rgba(30, 40, 60, 0.9);
+}
+
+/* Twinkling */
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 0.7; transform: scale(1); }
+  50%      { opacity: 1;   transform: scale(1.4); }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle linear infinite;
+  animation-duration: inherit;
+}
+
+/* DARK MODE → Bright icy stars */
+.dark .star {
+  background: #e0f4ff;
+  box-shadow: 0 0 18px 6px rgba(140, 220, 255, 0.95);
+}
+
+/* LIGHT MODE → Dark navy/grey stars (perfect on white background) */
+:root:not(.dark) .star {
+  background: #1e40af;           /* Deep blue or use #1e293b for pure slate */
+  box-shadow: 0 0 16px 5px rgba(30, 40, 100, 0.9);
+}
+
+/* Optional Shooting Star */
+@keyframes shooting-star {
+  0%   { transform: translateX(-200px) translateY(-100px) rotate(30deg); opacity: 0; }
+  8%   { opacity: 1; }
+  92%  { opacity: 1; }
+  100% { transform: translateX(120vw) translateY(100vh) rotate(30deg); opacity: 0; }
+}
+
+.shooting-star {
+  position: fixed;
+  top: 10%;
+  left: -100px;
+  width: 3px;
+  height: 100px;
+  background: linear-gradient(to bottom, transparent, #1e293b);
+  border-radius: 50%;
+  animation: shooting-star 20s linear infinite;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.dark .shooting-star {
+  background: linear-gradient(to bottom, transparent, #ffffff);
+}
+
+/* ============================================================
+   4. GLOBAL RESET & BODY
+============================================================ */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+  transition: background 0.4s ease, color 0.4s ease;
+  overflow-x: hidden;
+}
+
+/* ============================================================
+   5. LAYOUT & TYPOGRAPHY
+============================================================ */
+.container {
+  max-width: 1200px;
+  padding: 0 1.5rem;
+  margin: 0 auto;
+}
+
+.section { padding: 5rem 0; }
+.section-sm { padding: 3rem 0; }
+.section-lg { padding: 8rem 0; }
+
+.text-primary { color: var(--primary); }
+.text-secondary { color: var(--secondary); }
+.text-accent { color: var(--accent); }
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============================================================
+   6. CARDS & GLASSMORPHISM
+============================================================ */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.75rem;
+  box-shadow: var(--shadow-soft);
+  transition: all 0.35s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-medium);
+}
+
+.card-glass {
+  background: rgba(255, 255, 255, 0.09);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 1.25rem;
+  padding: 2rem;
+}
+
+/* ============================================================
+   7. BUTTONS
+============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 0.875rem;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Primary */
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), #7c3aed);
+  color: white;
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(139, 92, 246, 0.55);
+}
+
+/* Outline */
+.btn-outline {
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  position: relative;
+  z-index: 1;
+}
+
+.btn-outline::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--primary);
+  border-radius: 0.75rem;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+  z-index: -1;
+}
+
+.btn-outline:hover {
+  color: white;
+  transform: translateY(-3px);
+}
+
+.btn-outline:hover::before {
+  transform: scaleX(1);
+}
+
+/* Sizes */
+.btn-lg { padding: 1rem 2.5rem; font-size: 1.1rem; }
+.btn-sm { padding: 0.5rem 1.25rem; font-size: 0.9rem; }
+
+/* Loading State */
+.btn-loading {
+  pointer-events: none;
+  position: relative;
+}
+
+.btn-loading > * {
+  opacity: 0.7;
+}
+
+.btn-loading::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid white;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: btn-spin 0.8s linear infinite;
+}
+
+@keyframes btn-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ============================================================
+   8. UTILITIES & ANIMATIONS
+============================================================ */
+.border-gradient {
+  border: 2px solid transparent;
+  background: 
+    linear-gradient(var(--card-bg), var(--card-bg)) padding-box,
+    linear-gradient(135deg, var(--primary), var(--secondary)) border-box;
+  border-radius: 1rem;
+}
+
+.flex-center { display: flex; align-items: center; justify-content: center; }
+.flex-between { display: flex; justify-content: space-between; align-items: center; }
+
+.grid-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-in-left {
+  from { opacity: 0; transform: translateX(-60px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.animate-fade-in { animation: fade-in 0.8s ease-out forwards; }
+.animate-slide-in-left { animation: slide-in-left 0.9s ease-out forwards; }
+
+.hover-lift:hover { transform: translateY(-12px); }
+
+/* ============================================================
+   9. PROJECT CARDS – Final Polish
+============================================================ */
+.project-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  background: linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,0.6));
+  border: 1px solid rgba(255,255,255,0.6);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+  transition: all 0.4s ease;
+  padding: 2rem;
+}
+
+.dark .project-card {
+  background: linear-gradient(180deg, rgba(30,41,59,0.85), rgba(15,24,40,0.75));
+  border-color: rgba(255,255,255,0.1);
+  box-shadow: 0 15px 50px rgba(0,0,0,0.7);
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  height: 6px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-14px);
+  box-shadow: var(--shadow-hard);
+}
+
+.project-card:hover::before {
+  transform: scaleX(1.1);
+}
