@@ -27,7 +27,7 @@ A modern, responsive portfolio website showcasing my work in AI/ML, IoT systems,
 
 ## 📂 Project Structure
 ```
-portfolio/
+my-personal-portfolio/
 ├── src/
 │   ├── components/
 │   │   ├── layout/
@@ -42,16 +42,18 @@ portfolio/
 │   │   │   └── Contact.jsx
 │   │   └── ui/
 │   │       ├── StarBackground.jsx
-│   │       └── SmartScrollIndicator.jsx
+│   │       └── ThemeToggle.jsx
 │   ├── pages/
-│   │   └── Home.jsx
+│   │   ├── Home.jsx
+│   │   └── NotFound.jsx
 │   └── styles/
 │       └── index.css
-├── public/
+├── english-cv.pdf          
 ├── .gitignore
 ├── package.json
 ├── vite.config.js
 └── README.md
+
 ```
 
 ## 🚀 Getting Started
