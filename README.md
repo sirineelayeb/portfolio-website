@@ -66,7 +66,7 @@ my-personal-portfolio/
 
 1. Clone the repository
 ```bash
-git clone https://github.com/YOUR_USERNAME/sirine-elayeb-portfolio.git
+git clone https://github.com/sirineelayeb/portfolio-website.git
 ```
 
 2. Navigate to project directory
