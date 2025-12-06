@@ -1,8 +1,9 @@
 
 
-A modern, responsive portfolio website showcasing my work in AI/ML, IoT systems, and full-stack development.
+Showcasing my expertise in AI/ML, IoT, and full-stack development through a modern, interactive, and fully responsive portfolio website.
 
-<img width="921" height="416" alt="image" src="https://github.com/user-attachments/assets/465b7fc5-6bf5-46bf-9af1-e5e7d639d083" />
+
+<img width="943" height="418" alt="image" src="https://github.com/user-attachments/assets/68197033-5572-49f9-ac24-2bb4696c1ca7" />
 
 
 ## 🚀 Features
