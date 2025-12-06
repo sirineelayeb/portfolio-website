@@ -10,9 +10,9 @@
   --foreground: #1e293b;
   --background: #ffffff;
 
-  --primary: #8b5cf6;
-  --secondary: #06b6d4;
-  --accent: #f3c472;
+  --primary: #dacdf9;
+  --secondary: #457ff3;
+  --accent: #55b1fc;
 
   --border: #e2e8f0;
   --card-bg: #ffffff;
@@ -25,10 +25,10 @@
 
 .dark {
   --foreground: #f1f5f9;
-  --background: #0f172a;
+  --background: #000000;
 
   --primary: #a78bfa;
-  --secondary: #22d3ee;
+  --secondary: #5ee4ee;
   --accent: #fbbf24;
 
   --border: #334155;
@@ -124,6 +124,8 @@ body {
   min-height: 100vh;
   transition: background 0.4s ease, color 0.4s ease;
   overflow-x: hidden;
+   font-size: 14px;
+   line-height: 1.5;
 }
 
 /* ============================================================
@@ -172,8 +174,8 @@ body {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 1.25rem;
-  padding: 2rem;
+   padding: 1rem; 
+  border-radius: 1rem; 
 }
 
 /* ============================================================
@@ -313,7 +315,7 @@ body {
   backdrop-filter: blur(12px);
   box-shadow: 0 10px 40px rgba(0,0,0,0.12);
   transition: all 0.4s ease;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .dark .project-card {

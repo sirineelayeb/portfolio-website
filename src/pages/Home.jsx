@@ -7,11 +7,11 @@ import { Navbar } from "../components/layout/Navbar";
 import { Footer } from "../components/layout/Footer";
 import { StarBackground } from "../components/ui/StarBackground";
 import { Certificates } from "../components/sections/Certificates";
-import { SmartScrollIndicator } from "../components/ui/ScrollIndicator";
+// import { SmartScrollIndicator } from "../components/ui/ScrollIndicator";
 
 export const Home = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden bg-black">
 
       {/* Background Effects */}
       <StarBackground />
@@ -32,8 +32,7 @@ export const Home = () => {
       {/* Footer */}
       <Footer />
       
-      {/* Smart Scroll Indicator - Add this */}
-      <SmartScrollIndicator />
+      {/* <SmartScrollIndicator /> */}
     </div>
   );
 };

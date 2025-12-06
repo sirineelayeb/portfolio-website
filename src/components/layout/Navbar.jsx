@@ -37,6 +37,7 @@ export const Navbar = () => {
     { name: "Home", id: "home" },
     { name: "About", id: "about" },
     { name: "Skills", id: "skills" },
+    { name: "Certificates", id: "certificates" },
     { name: "Projects", id: "projects" },
     { name: "Contact", id: "contact" },
   ];
@@ -78,7 +79,7 @@ export const Navbar = () => {
                 </li>
               ))}
             </ul>
-            <ThemeToggle />
+            {/* <ThemeToggle /> */}
           </div>
 
           {/* Mobile Menu Toggle */}

@@ -9,6 +9,22 @@ import {
 
 export const Projects = () => {
   const projects = [
+   {
+  title: 'Process Management System',
+  category: 'Full-Stack Enterprise',
+  description:
+    'A comprehensive platform to manage manufacturing processes, operators, machines, and task execution with real-time monitoring and simulations.',
+  technologies: ['React', 'Node.js', '.NET', 'MongoDB', 'MQTT', 'WebSocket', 'TailwindCSS'],
+  github: 'https://github.com/sirineelayeb/mes-plastic-bottle-process-management.git',
+  demo: null,
+  icon: <Globe className="w-6 h-6" />,
+  contributions: [
+    'Developed Product Manager module to manage operators, machines, processes, and task workflows, including skill-based operator assignment.',
+    'Built Operator module allowing operators to view their assigned tasks and update task status in real time.',
+    'Integrated MQTT for real-time communication between machines and backend.',
+    'Implemented simulation of machine operations using .NET for testing and validation of workflows.'
+  ]
+},
     {
       title: 'AI Delivery Assistant',
       category: 'Artificial Intelligence',
@@ -17,17 +33,17 @@ export const Projects = () => {
       technologies: ['Python', 'MongoDB', 'FAISS', 'Sentence Transformers', 'RAG', 'FastAPI'],
       github: 'https://github.com/sirineelayeb/ai-delivery-assistant',
       demo: null,
-      icon: <Bot className="w-12 h-12" />
+      icon: <Bot className="w-6 h-6" />
     },
     {
       title: 'Real-Time IoT Vehicle Tracking',
       category: 'IoT & Embedded Systems',
       description:
         'Connected IoT platform for live vehicle tracking, delivery monitoring, and fleet analytics using ESP32 and MQTT.',
-      technologies: ['ESP32', 'MQTT', 'WebSocket', 'React', 'Node.js', 'Azure'],
+      technologies: ['ESP32', 'MQTT', 'WebSocket', 'React', 'Node.js', '.Net'],
       github: 'https://github.com/Azlouk-Ahmed/iot-delivery-tracking-system.git',
       demo: null,
-      icon: <Radio className="w-12 h-12" />
+      icon: <Radio className="w-6 h-6" />
     },
     {
       title: 'E-learning Platform',
@@ -37,7 +53,7 @@ export const Projects = () => {
       technologies: ['Angular', 'Spring Boot', 'MySQL', 'Thymeleaf'],
       github: 'https://github.com/sirineelayeb/E-Learning-Platform-Project',
       demo: null,
-      icon: <GraduationCap className="w-12 h-12" />
+      icon: <GraduationCap className="w-6 h-6" />
     },
     {
       title: 'Social Networking App',
@@ -47,7 +63,7 @@ export const Projects = () => {
       technologies: ['MongoDB', 'Express', 'React', 'Node.js'],
       github: '#',
       demo: null,
-      icon: <Globe className="w-12 h-12" />
+      icon: <Globe className="w-6 h-6" />
     }
   ];
 
@@ -69,11 +85,11 @@ export const Projects = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-10 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-16 max-w-7xl mx-auto">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-white dark:bg-gray-900/95 rounded-2xl p-8 border border-gray-200 dark:border-gray-800 
+             className="bg-white dark:bg-gray-900/95 rounded-xl p-4 border border-gray-200 dark:border-gray-800 
                          shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group"
             >
               {/* Lucide Icon */}
@@ -82,7 +98,7 @@ export const Projects = () => {
               </div>
 
               {/* Title */}
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
                 {project.title}
               </h3>
 
@@ -92,7 +108,7 @@ export const Projects = () => {
               </span>
 
               {/* Description */}
-              <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+              <p className="text-sm  dark:text-gray-300 mb-6 leading-snug">
                 {project.description}
               </p>
 

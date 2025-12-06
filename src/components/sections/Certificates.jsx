@@ -16,7 +16,8 @@ export const Certificates = () => {
       date: 'Nov 2024',
       description: 'Advanced certification in building Retrieval-Augmented Generation agents using LLMs and vector databases.',
       verifyUrl: 'https://learn.nvidia.com/certificates',
-      icon: <Bot className="w-9 h-9" />
+      icon: <Bot className="w-6 h-6" />
+
     },
     {
       title: 'Building LLM Applications With Prompt Engineering',
@@ -24,7 +25,7 @@ export const Certificates = () => {
       date: 'Nov 2024',
       description: 'Expertise in prompt engineering and building production-ready LLM applications.',
       verifyUrl: 'https://learn.nvidia.com/certificates',
-      icon: <Lightbulb className="w-9 h-9" />
+      icon: <Lightbulb className="w-6 h-6" />
     },
     {
       title: 'Building Conversational AI Applications',
@@ -32,7 +33,7 @@ export const Certificates = () => {
       date: 'Nov 2024',
       description: 'Designing intelligent conversational AI systems with natural language understanding.',
       verifyUrl: 'https://learn.nvidia.com/certificates',
-      icon: <MessageSquare className="w-9 h-9" />
+      icon: <MessageSquare className="w-6 h-6" />
     },
     {
       title: 'EF SET English Certificate - C1 Advanced',
@@ -40,7 +41,7 @@ export const Certificates = () => {
       date: 'Nov 2023',
       description: 'C1 Advanced (C2 in Reading/Writing) — Fluent in professional & academic English.',
       verifyUrl: 'https://cert.efset.org/pxhLfc',
-      icon: <Globe className="w-9 h-9" />
+      icon: <Globe className="w-6 h-6" />
     },
     {
       title: 'Spring Boot & Angular Development',
@@ -48,7 +49,7 @@ export const Certificates = () => {
       date: 'Aug 2023',
       description: 'Full-stack enterprise development with Spring Boot backend and Angular frontend.',
       verifyUrl: '#',
-      icon: <Wrench className="w-9 h-9" />
+      icon: <Wrench className="w-6 h-6" />
     },
     {
       title: 'Scrum Fundamentals Certified',
@@ -56,7 +57,7 @@ export const Certificates = () => {
       date: 'Nov 2023',
       description: 'Certified in Scrum methodology, agile principles, and team collaboration.',
       verifyUrl: 'https://www.scrumstudy.com/certification/verify',
-      icon: <ClipboardList className="w-9 h-9" />
+      icon: <ClipboardList className="w-6 h-6" />
     }
   ];
 
@@ -73,7 +74,7 @@ export const Certificates = () => {
           <h2 className="text-5xl md:text-6xl font-bold mb-4">
             <span className="text-gradient">Certificates</span> & Achievements
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-sm text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Verified credentials from leading institutions in AI and software engineering
           </p>
         </div>
@@ -82,7 +83,7 @@ export const Certificates = () => {
           {certificates.map((cert, index) => (
             <div
               key={index}
-              className="bg-white dark:bg-gray-900/95 rounded-2xl p-7 border border-gray-200 dark:border-gray-800 
+              className="bg-white dark:bg-gray-900/95 rounded-2xl p-7 border border-gray-200 dark:border-gray-800
                          shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
             >
               {/* Simple icon */}
@@ -91,9 +92,9 @@ export const Certificates = () => {
               </div>
 
               {/* Title */}
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+             <p className="text-sm leading-snug text-gray-900 dark:text-white mb-2">
                 {cert.title}
-              </h3>
+              </p>
 
               {/* Issuer & Date */}
               <div className="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400 mb-4">

@@ -1,15 +1,17 @@
 import React from 'react';
 
 const skills = [
-  { name: 'React.js & Next.js',     level: 92, icon: '⚛️' },
-  { name: 'AI & Machine Learning',  level: 88, icon: '🧠' },
-  { name: 'Python / TensorFlow',    level: 85, icon: '🐍' },
-  { name: 'Node.js & Express',      level: 82, icon: '⚡' },
-  { name: 'ESP32 / IoT',            level: 87, icon: '📡' },
-  { name: 'Docker & Cloud',         level: 78, icon: '☁️' },
-  { name: 'LLMs & RAG Systems',     level: 72, icon: '🤖' },
-  { name: 'MongoDB & PostgreSQL',   level: 80, icon: '🗄️' },
+  { name: 'React.js & Next.js',             level: 92, icon: '⚛️' },
+  { name: 'AI & Machine Learning',          level: 88, icon: '🧠' },
+  { name: 'Python / TensorFlow',            level: 85, icon: '🐍' },
+  { name: 'Node.js & Express',              level: 82, icon: '⚡' },
+  { name: 'IoT (ESP32, MQTT, WebSocket)',   level: 87, icon: '📡' },
+  { name: 'Docker & Cloud',                 level: 78, icon: '☁️' },
+  { name: 'LLMs & RAG Systems',             level: 72, icon: '🤖' },
+  { name: 'Databases (MySQL, MongoDB & PostgreSQL)', level: 80, icon: '🗄️' },
 ];
+
+
 
 export const Skills = () => {
   return (
@@ -32,7 +34,7 @@ export const Skills = () => {
 </div>
 
         {/* Responsive Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 max-w-5xl mx-auto">
           {skills.map((skill, index) => (
             <div
               key={skill.name}
@@ -41,9 +43,9 @@ export const Skills = () => {
             >
               {/* Card */}
               <div className="card-glass p-6 lg:p-8 rounded-2xl border border-white/10 backdrop-blur-xl hover-lift transition-all duration-500">
-                <div className="flex items-center justify-between mb-5">
+                <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center gap-4">
-                    <div className="text-3xl lg:text-4xl">{skill.icon}</div>
+                    <div className="text-2xl lg:text-3xl">{skill.icon}</div>
                     <h3 className="text-lg lg:text-xl font-semibold text-foreground">
                       {skill.name}
                     </h3>
@@ -70,7 +72,7 @@ export const Skills = () => {
                 </div>
 
                 {/* Level Label (visible on hover or always on large screens) */}
-                <div className="mt-3 text-right">
+                <div className="mt-2 text-right">
                   <span className="text-sm font-medium text-gray-500 dark:text-gray-400 opacity-0 lg:opacity-100 group-hover:opacity-100 transition-opacity">
                     {skill.level < 60 ? 'Learning' : skill.level < 80 ? 'Proficient' : 'Expert'}
                   </span>
