@@ -15,7 +15,7 @@ export const Certificates = () => {
       issuer: 'NVIDIA',
       date: 'Nov 2024',
       description: 'Advanced certification in building Retrieval-Augmented Generation agents using LLMs and vector databases.',
-      verifyUrl: 'https://learn.nvidia.com/certificates',
+      verifyUrl: 'https://drive.google.com/file/d/1wyAki38WpNgwkZmb0s9E9mQlCvaLiSfj/view?usp=drive_link',
       icon: <Bot className="w-6 h-6" />
 
     },
@@ -24,7 +24,7 @@ export const Certificates = () => {
       issuer: 'NVIDIA',
       date: 'Nov 2024',
       description: 'Expertise in prompt engineering and building production-ready LLM applications.',
-      verifyUrl: 'https://learn.nvidia.com/certificates',
+      verifyUrl: 'https://drive.google.com/file/d/1S3DQjB5SxSGxdIfktda84AKgAIt1rojZ/view?usp=sharing',
       icon: <Lightbulb className="w-6 h-6" />
     },
     {
@@ -32,7 +32,7 @@ export const Certificates = () => {
       issuer: 'NVIDIA',
       date: 'Nov 2024',
       description: 'Designing intelligent conversational AI systems with natural language understanding.',
-      verifyUrl: 'https://learn.nvidia.com/certificates',
+      verifyUrl: 'https://drive.google.com/file/d/1x-5vWdJwB0suolHZ7B9yvJuQ73tt4cn2/view?usp=sharing',
       icon: <MessageSquare className="w-6 h-6" />
     },
     {
@@ -40,7 +40,7 @@ export const Certificates = () => {
       issuer: 'EF Standard English Test',
       date: 'Nov 2023',
       description: 'C1 Advanced (C2 in Reading/Writing) — Fluent in professional & academic English.',
-      verifyUrl: 'https://cert.efset.org/pxhLfc',
+      verifyUrl: 'https://drive.google.com/file/d/1GXDCaWoLzUpavNDl6Y0jgMgIFaQXK7MF/view?usp=sharing',
       icon: <Globe className="w-6 h-6" />
     },
     {
@@ -48,7 +48,7 @@ export const Certificates = () => {
       issuer: 'PROTECH-IT',
       date: 'Aug 2023',
       description: 'Full-stack enterprise development with Spring Boot backend and Angular frontend.',
-      verifyUrl: '#',
+      verifyUrl: 'https://drive.google.com/file/d/1eQk4N8bVFXs-3dIFOCCiIhzaeWPieZnv/view?usp=drive_link',
       icon: <Wrench className="w-6 h-6" />
     },
     {
@@ -56,7 +56,7 @@ export const Certificates = () => {
       issuer: 'SCRUMstudy',
       date: 'Nov 2023',
       description: 'Certified in Scrum methodology, agile principles, and team collaboration.',
-      verifyUrl: 'https://www.scrumstudy.com/certification/verify',
+      verifyUrl: 'https://drive.google.com/file/d/1-A3SEbe3-n5XsYyvVjOjh_VcUxGaf814/view?usp=drive_link',
       icon: <ClipboardList className="w-6 h-6" />
     }
   ];
