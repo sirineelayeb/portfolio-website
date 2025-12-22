@@ -9,22 +9,39 @@ import {
 
 export const Projects = () => {
   const projects = [
-   {
-  title: 'Process Management System',
-  category: 'Full-Stack Enterprise',
-  description:
-    'A comprehensive platform to manage manufacturing processes, operators, machines, and task execution with real-time monitoring and simulations.',
-  technologies: ['React', 'Node.js', '.NET', 'MongoDB', 'MQTT', 'WebSocket', 'TailwindCSS'],
-  github: 'https://github.com/sirineelayeb/mes-plastic-bottle-process-management.git',
-  demo: null,
-  icon: <Globe className="w-6 h-6" />,
-  contributions: [
-    'Developed Product Manager module to manage operators, machines, processes, and task workflows, including skill-based operator assignment.',
-    'Built Operator module allowing operators to view their assigned tasks and update task status in real time.',
-    'Integrated MQTT for real-time communication between machines and backend.',
-    'Implemented simulation of machine operations using .NET for testing and validation of workflows.'
-  ]
-},
+    {
+      title: 'AI-Based Robot Health Monitoring',
+      category: 'IoT & AI',
+      description:
+        'Real-time robot health monitoring using IoT telemetry and AI-based anomaly detection. Dashboard visualizes battery, motor, CPU, and velocity data.',
+      technologies: ['React', 'Node.js', 'Python', 'MongoDB', 'MQTT', 'WebSocket', 'Random Forest', 'TailwindCSS'],
+      github: 'https://github.com/sirineelayeb/ai-robot-health-monitoring.git',
+      demo: null,
+      icon: <Bot className="w-6 h-6" />,
+      contributions: [
+        'Developed backend to collect and process real-time robot telemetry.',
+        'Implemented Random Forest AI model to detect anomalies.',
+        'Built React dashboard to visualize robot health, warnings, and trends.',
+        'Integrated MQTT and WebSocket for real-time communication.',
+        'Created robot simulator for testing and AI validation.'
+      ]
+    },
+    {
+      title: 'Process Management System',
+      category: 'Full-Stack Enterprise',
+      description:
+        'A comprehensive platform to manage manufacturing processes, operators, machines, and task execution with real-time monitoring and simulations.',
+      technologies: ['React', 'Node.js', '.NET', 'MongoDB', 'MQTT', 'WebSocket', 'TailwindCSS'],
+      github: 'https://github.com/sirineelayeb/mes-plastic-bottle-process-management.git',
+      demo: null,
+      icon: <Globe className="w-6 h-6" />,
+      contributions: [
+        'Developed Product Manager module to manage operators, machines, processes, and task workflows, including skill-based operator assignment.',
+        'Built Operator module allowing operators to view their assigned tasks and update task status in real time.',
+        'Integrated MQTT for real-time communication between machines and backend.',
+        'Implemented simulation of machine operations using .NET for testing and validation of workflows.'
+      ]
+    },
     {
       title: 'AI Delivery Assistant',
       category: 'Artificial Intelligence',
@@ -69,7 +86,6 @@ export const Projects = () => {
 
   return (
     <section id="projects" className="py-20 lg:py-32 relative overflow-hidden">
-      {/* Your signature background glows — untouched */}
       <div className="absolute inset-0 -z-10 pointer-events-none">
         <div className="absolute top-20 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-10 right-1/3 w-80 h-80 bg-secondary/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
@@ -89,30 +105,25 @@ export const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-             className="bg-white dark:bg-gray-900/95 rounded-xl p-4 border border-gray-200 dark:border-gray-800 
+              className="bg-white dark:bg-gray-900/95 rounded-xl p-4 border border-gray-200 dark:border-gray-800 
                          shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group"
             >
-              {/* Lucide Icon */}
               <div className="mb-6 text-primary opacity-90 group-hover:opacity-100 transition-opacity">
                 {project.icon}
               </div>
 
-              {/* Title */}
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
                 {project.title}
               </h3>
 
-              {/* Category Badge */}
               <span className="inline-block px-3 py-1 text-xs font-medium text-primary bg-primary/10 rounded-full mb-4">
                 {project.category}
               </span>
 
-              {/* Description */}
               <p className="text-sm  dark:text-gray-300 mb-6 leading-snug">
                 {project.description}
               </p>
 
-              {/* Tech Stack */}
               <div className="flex flex-wrap gap-2 mb-8">
                 {project.technologies.map((tech) => (
                   <span
@@ -124,7 +135,6 @@ export const Projects = () => {
                 ))}
               </div>
 
-              {/* Links */}
               <div className="flex gap-6 text-sm font-medium">
                 {project.github && project.github !== '#' && (
                   <a
