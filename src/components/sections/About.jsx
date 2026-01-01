@@ -24,7 +24,7 @@ export const About = () => {
         {/* CTA Buttons */}
         <div className="flex flex-wrap justify-center gap-4">
           <a
-            href="/CV_PFE_sirine_ELAYEB.pdf"
+            href="/CV_PFE_sirine_ELAYEB.pdf"  
             target="_blank"
             className="btn btn-primary"
           >
