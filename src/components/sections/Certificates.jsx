@@ -83,8 +83,7 @@ export const Certificates = () => {
           {certificates.map((cert, index) => (
             <div
               key={index}
-              className="bg-white dark:bg-gray-900/95 rounded-2xl p-7 border border-gray-200 dark:border-gray-800
-                         shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+              className="card-glass p-6 lg:p-8 rounded-2xl border border-white/10 backdrop-blur-xl hover-lift transition-all duration-500"
             >
               {/* Simple icon */}
               <div className="mb-5 text-primary">
@@ -92,7 +91,7 @@ export const Certificates = () => {
               </div>
 
               {/* Title */}
-             <p className="text-sm leading-snug text-gray-900 dark:text-white mb-2">
+             <p className="text-sm leading-snug text-white-900 dark:text-white mb-2">
                 {cert.title}
               </p>
 

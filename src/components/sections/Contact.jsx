@@ -36,12 +36,10 @@ export const Contact = () => {
         </div>
 
     {/* Pure minimalist card */}
-<div className="bg-white/80 dark:bg-gray-900/95 backdrop-blur-sm rounded-3xl p-12 
-                border border-gray-200/60 dark:border-gray-800 
-                shadow-sm hover:shadow-lg transition-shadow duration-300">
+<div className="card-glass p-6 lg:p-8 rounded-2xl border border-white/10 backdrop-blur-xl hover-lift transition-all duration-500">
   <form onSubmit={handleSubmit} className="space-y-16">
 
-    {/* Name */}
+{/* Name */}
     <input
       type="text"
       name="name"
@@ -49,12 +47,11 @@ export const Contact = () => {
       onChange={handleChange}
       required
       placeholder="Your name"
-      className="w-full pt-4 pb-3 bg-transparent border-b-2 border-gray-200 dark:border-gray-700 
+      className="w-full pt-4 pb-3 bg-transparent border-b-2 border-gray-700 
                  focus:border-primary focus:outline-none transition-all duration-300 
-                 text-lg text-center placeholder:text-gray-400 dark:placeholder:text-gray-500
-                 text-gray-900 dark:text-gray-100"
+                 text-lg text-center placeholder:text-gray-500
+                 text-gray-100"
     />
-
     {/* Email */}
     <input
       type="email"
@@ -63,10 +60,10 @@ export const Contact = () => {
       onChange={handleChange}
       required
       placeholder="your@email.com"
-      className="w-full pt-4 pb-3 bg-transparent border-b-2 border-gray-200 dark:border-gray-700 
+        className="w-full pt-4 pb-3 bg-transparent border-b-2 border-gray-700 
                  focus:border-primary focus:outline-none transition-all duration-300 
-                 text-lg text-center placeholder:text-gray-400 dark:placeholder:text-gray-500
-                 text-gray-900 dark:text-gray-100"
+                 text-lg text-center placeholder:text-gray-500
+                 text-gray-100"
     />
 
     {/* Message */}
@@ -77,11 +74,10 @@ export const Contact = () => {
       required
       rows="6"
       placeholder="Your message..."
-      className="w-full pt-6 pb-8 bg-transparent border-b-2 border-gray-200 dark:border-gray-700 
+        className="w-full pt-4 pb-3 bg-transparent border-b-2 border-gray-700 
                  focus:border-primary focus:outline-none transition-all duration-300 
-                 text-lg text-center leading-relaxed resize-none 
-                 placeholder:text-gray-400 dark:placeholder:text-gray-500
-                 text-gray-900 dark:text-gray-100"
+                 text-lg text-center placeholder:text-gray-500
+                 text-gray-100"
     />
 
     {/* Clean, bold button */}

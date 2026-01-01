@@ -58,7 +58,7 @@ export const Projects = () => {
       description:
         'Connected IoT platform for live vehicle tracking, delivery monitoring, and fleet analytics using ESP32 and MQTT.',
       technologies: ['ESP32', 'MQTT', 'WebSocket', 'React', 'Node.js', '.Net'],
-      github: 'https://github.com/Azlouk-Ahmed/iot-delivery-tracking-system.git',
+      github: 'https://github.com/sirineelayeb/iot-delivery-tracking-system',
       demo: null,
       icon: <Radio className="w-6 h-6" />
     },
@@ -105,14 +105,13 @@ export const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-white dark:bg-gray-900/95 rounded-xl p-4 border border-gray-200 dark:border-gray-800 
-                         shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group"
+              className="card-glass p-6 lg:p-8 rounded-2xl border border-white/10 backdrop-blur-xl hover-lift transition-all duration-500"
             >
               <div className="mb-6 text-primary opacity-90 group-hover:opacity-100 transition-opacity">
                 {project.icon}
               </div>
 
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+              <h3 className="text-lg font-semibold text-white-900 dark:text-white mb-2">
                 {project.title}
               </h3>
 
@@ -120,7 +119,7 @@ export const Projects = () => {
                 {project.category}
               </span>
 
-              <p className="text-sm  dark:text-gray-300 mb-6 leading-snug">
+              <p className="text-sm  dark:text-red-300 mb-6 leading-snug">
                 {project.description}
               </p>
 
