@@ -7,69 +7,77 @@
    2. THEME VARIABLES
 ============================================================ */
 :root {
-  --foreground: #1e293b;
+  --foreground: #0f172a;
   --background: #ffffff;
 
-  --primary: #ffc8dd;
-  --secondary: #9c0062;
-  --accent: #fbbf24;
+  --primary: #2563eb;
+  --secondary: #4f46e5;
+  --accent: #d97706;
 
   --border: #e2e8f0;
   --card-bg: #ffffff;
 
-  --shadow: rgba(0, 0, 0, 0.1);
+  --shadow: rgba(15, 23, 42, 0.08);
 }
 
 /* DARK MODE */
 .dark {
-  --foreground: #f1f5f9;
-  --background: #000000;
+  --foreground: #e2e8f0;
+  --background: #020617;
 
-  --primary: #f7c8d9;
-  --secondary: #d98fb2;
+  --primary: #60a5fa;
+  --secondary: #818cf8;
   --accent: #fbbf24;
 
-  --border: #334155;
+  --border: #1e293b;
   --card-bg: #0f172a;
 
-  --shadow: rgba(0, 0, 0, 0.6);
+  --shadow: rgba(0, 0, 0, 0.5);
 }
 
 /* ============================================================
-   3. GLOBAL RESET (FIX SPACING ISSUES HERE)
+   3. GLOBAL RESET
 ============================================================ */
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@layer base {
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-/* IMPORTANT: global breathing space */
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: system-ui, sans-serif;
-  line-height: 1.7;
+  line-height: 1.6;
 
   min-height: 100vh;
   overflow-x: hidden;
 
-  font-size: 15px;
+  font-size: 14px;
 }
 
 /* ============================================================
-   4. GLOBAL SECTION SPACING (VERY IMPORTANT FIX)
+   4. SECTION SPACING (NO FORCED FULL-SCREEN HEIGHT)
 ============================================================ */
 section {
-  min-height: 100vh;
   display: flex;
   align-items: center;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+/* Use this class ONLY on sections you explicitly want full-viewport
+   (e.g. a Hero/Home section) */
+.section-full {
+  min-height: 100vh;
 }
 
 /* ============================================================
@@ -106,7 +114,7 @@ section {
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: 1rem;
-  padding: 1.5rem;
+  padding: 1.25rem;
   box-shadow: 0 10px 30px var(--shadow);
   transition: 0.3s ease;
 }
@@ -124,10 +132,11 @@ section {
   justify-content: center;
   gap: 0.5rem;
 
-  padding: 0.75rem 1.5rem;
+  padding: 0.6rem 1.25rem;
   border-radius: 0.8rem;
 
   font-weight: 600;
+  font-size: 0.875rem;
   cursor: pointer;
 
   transition: 0.3s ease;
@@ -158,11 +167,11 @@ section {
    9. UTILITIES (SPACING HELPERS)
 ============================================================ */
 .space-y-lg > * + * {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 
 .space-y-xl > * + * {
-  margin-top: 4rem;
+  margin-top: 3rem;
 }
 
 /* Center helpers */

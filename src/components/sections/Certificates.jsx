@@ -37,21 +37,21 @@ export const Certificates = () => {
   return (
     <section
       id="certificates"
-      className="min-h-screen flex items-center justify-center px-6 py-20"
+      className="flex items-center justify-center px-6 py-12"
     >
-      <div className="max-w-5xl w-full text-center">
+      <div className="max-w-4xl w-full text-center">
 
-        <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-10">
+        <h2 className="text-2xl md:text-3xl font-bold text-gradient mb-6">
           Certificates
         </h2>
 
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-4 md:grid-cols-2">
           {certificates.map((cert) => (
             <div
               key={cert.title}
-              className="p-5 rounded-xl border border-white/10 bg-white/5 dark:bg-white/5 text-left"
+              className="p-4 rounded-xl border border-white/10 bg-white/5 dark:bg-white/5 text-left"
             >
-              <h3 className="text-lg font-semibold text-foreground mb-2">
+              <h3 className="text-sm md:text-base font-semibold text-foreground mb-1.5">
                 {cert.title}
               </h3>
 

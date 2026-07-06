@@ -75,27 +75,27 @@ export const Navbar = () => {
           : "transparent",
       }}
     >
-      <div className="container mx-auto px-6 sm:px-8 lg:px-12 py-6 max-w-7xl">
+      <div className="container mx-auto px-6 sm:px-8 lg:px-12 py-3 max-w-7xl">
         <div className="flex items-center justify-between">
 
       {/* LOGO */}
-      <div className="flex items-baseline gap-1.5">
+      <div className="flex items-baseline gap-1">
         <span
-          className="font-serif italic font-medium text-3xl tracking-tight text-gradient"
+          className="font-serif italic font-medium text-2xl tracking-tight text-gradient"
           style={{ letterSpacing: "-0.02em" }}
         >
           Syrine
         </span>
         <span
-        className="font-sans font-light text-sm tracking-wide"
+        className="font-sans font-light text-xs tracking-wide"
         style={{ color: "color-mix(in srgb, var(--primary) 100%, transparent)" }}
       >
         's Portfolio
       </span>
       </div>
           {/* DESKTOP NAV */}
-          <div className="hidden md:flex items-center gap-8">
-            <ul className="flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
+            <ul className="flex items-center gap-6">
               {navLinks.map((link) => (
                 <li key={link.id}>
                   <button
@@ -134,14 +134,14 @@ export const Navbar = () => {
             className="md:hidden"
             style={{ color: "var(--foreground)" }}
           >
-            {isMobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
+            {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
 
         {/* MOBILE MENU */}
         {isMobileMenuOpen && (
           <div
-            className="md:hidden mt-4 flex flex-col gap-3 backdrop-blur-xl p-4 rounded-xl"
+            className="md:hidden mt-3 flex flex-col gap-3 backdrop-blur-xl p-3 rounded-xl"
             style={{
               backgroundColor: "color-mix(in srgb, var(--background) 90%, transparent)",
               border: "1px solid var(--border)",
@@ -151,7 +151,7 @@ export const Navbar = () => {
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className="text-left transition-colors duration-300"
+                className="text-left text-sm transition-colors duration-300"
                 style={{
                   color:
                     activeSection === link.id
@@ -165,7 +165,7 @@ export const Navbar = () => {
               </button>
             ))}
 
-            <div className="pt-3" style={{ borderTop: "1px solid var(--border)" }}>
+            <div className="pt-2" style={{ borderTop: "1px solid var(--border)" }}>
               <ThemeToggle />
             </div>
           </div>

@@ -12,7 +12,7 @@ import { Certificates } from "../components/sections/Certificates";
 
 export const Home = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+    <div className="min-h-screen flex flex-col bg-background text-foreground overflow-x-hidden">
 
       {/* Background Effects */}
       <Background />            
@@ -20,7 +20,7 @@ export const Home = () => {
       <Navbar />
       
       {/* Main Content */}
-      <main>
+      <main className="flex-1">
         <Hero />
         <About />
         <Skills />

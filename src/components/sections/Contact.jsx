@@ -61,27 +61,27 @@ export const Contact = () => {
   return (
     <section
       id="contact"
-      className="min-h-screen flex items-center justify-center px-6 py-24"
+      className="flex items-center justify-center px-6 py-12"
     >
-      <div className="w-full max-w-2xl text-center">
+      <div className="w-full max-w-lg text-center">
 
         {/* Title */}
-        <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-4">
+        <h2 className="text-2xl md:text-3xl font-bold text-gradient mb-2">
           Contact Me
         </h2>
 
-        <p className="text-foreground/70 mb-12">
+        <p className="text-foreground/70 text-sm md:text-base mb-6">
           Let's collaborate on something great
         </p>
 
         {/* Form */}
         <form
           onSubmit={handleSubmit}
-          className="space-y-6 text-left"
+          className="space-y-4 text-left"
         >
           {/* Name */}
           <div>
-            <label className="text-sm" style={{ color: "var(--foreground)", opacity: 0.7 }}>
+            <label className="text-xs" style={{ color: "var(--foreground)", opacity: 0.7 }}>
               Name
             </label>
             <input
@@ -91,7 +91,7 @@ export const Contact = () => {
               onChange={handleChange}
               required
               placeholder="Your name"
-              className="w-full mt-2 p-3 rounded-xl bg-transparent border outline-none focus:border-2"
+              className="w-full mt-1 p-2.5 text-sm rounded-xl bg-transparent border outline-none transition-colors"
               style={inputStyle}
               onFocus={(e) => (e.target.style.borderColor = "var(--primary)")}
               onBlur={(e) => (e.target.style.borderColor = "var(--border)")}
@@ -100,7 +100,7 @@ export const Contact = () => {
 
           {/* Email */}
           <div>
-            <label className="text-sm" style={{ color: "var(--foreground)", opacity: 0.7 }}>
+            <label className="text-xs" style={{ color: "var(--foreground)", opacity: 0.7 }}>
               Email
             </label>
             <input
@@ -110,7 +110,7 @@ export const Contact = () => {
               onChange={handleChange}
               required
               placeholder="you@email.com"
-              className="w-full mt-2 p-3 rounded-xl bg-transparent border outline-none"
+              className="w-full mt-1 p-2.5 text-sm rounded-xl bg-transparent border outline-none transition-colors"
               style={inputStyle}
               onFocus={(e) => (e.target.style.borderColor = "var(--primary)")}
               onBlur={(e) => (e.target.style.borderColor = "var(--border)")}
@@ -119,7 +119,7 @@ export const Contact = () => {
 
           {/* Message */}
           <div>
-            <label className="text-sm" style={{ color: "var(--foreground)", opacity: 0.7 }}>
+            <label className="text-xs" style={{ color: "var(--foreground)", opacity: 0.7 }}>
               Message
             </label>
             <textarea
@@ -127,9 +127,9 @@ export const Contact = () => {
               value={formData.message}
               onChange={handleChange}
               required
-              rows="5"
+              rows="4"
               placeholder="Write your message..."
-              className="w-full mt-2 p-3 rounded-xl bg-transparent border outline-none"
+              className="w-full mt-1 p-2.5 text-sm rounded-xl bg-transparent border outline-none resize-none transition-colors"
               style={inputStyle}
               onFocus={(e) => (e.target.style.borderColor = "var(--primary)")}
               onBlur={(e) => (e.target.style.borderColor = "var(--border)")}
@@ -147,7 +147,7 @@ export const Contact = () => {
         </form>
 
         {/* Footer */}
-        <p className="mt-8 text-sm text-foreground/50">
+        <p className="mt-4 text-xs text-foreground/50">
           I usually reply within a few hours
         </p>
       </div>

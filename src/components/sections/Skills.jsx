@@ -54,42 +54,42 @@ export const Skills = () => {
   return (
     <section
       id="skills"
-      className="min-h-screen flex items-center justify-center py-20"
+      className="flex items-center justify-center py-12"
     >
-      <div className="container mx-auto px-6 max-w-5xl flex flex-col items-center text-center">
+      <div className="container mx-auto px-6 max-w-4xl flex flex-col items-center text-center">
 
         {/* Title */}
-        <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-6">
+        <h2 className="text-2xl md:text-3xl font-bold text-gradient mb-3">
           Skills & Expertise
         </h2>
 
         {/* Paragraph */}
-        <p className="text-foreground/70 max-w-2xl mb-20 leading-relaxed text-center">
+        <p className="text-foreground/70 max-w-xl mb-8 text-sm md:text-base leading-relaxed text-center">
           I focus on software development, modern web applications, IoT systems,
           and AI technologies. My goal is to continuously learn and work with
           new technologies to build scalable, efficient, and real-world solutions.
         </p>
 
         {/* Skills by category */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-14 w-full text-left">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-8 w-full text-left">
           {skillGroups.map((group) => (
             <div key={group.category}>
               <h3
-                className="text-xs font-semibold tracking-wider uppercase mb-4"
+                className="text-xs font-semibold tracking-wider uppercase mb-2"
                 style={{ color: "var(--primary)" }}
               >
                 {group.category}
               </h3>
 
-              <ul className="space-y-4">
+              <ul className="space-y-2">
                 {group.skills.map((skill) => (
                   <li
                     key={skill.name}
-                    className="flex items-center justify-between gap-4 pb-3"
+                    className="flex items-center justify-between gap-4 pb-2"
                     style={{ borderBottom: "1px solid var(--border)" }}
                   >
                     <span
-                      className="text-sm md:text-base"
+                      className="text-xs md:text-sm"
                       style={{ color: "var(--foreground)" }}
                     >
                       {skill.name}

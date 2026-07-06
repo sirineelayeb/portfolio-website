@@ -70,29 +70,29 @@ export const Projects = () => {
   return (
     <section
       id="projects"
-      className="min-h-screen flex flex-col items-center justify-center px-6 py-24"
+      className="flex flex-col items-center justify-center px-6 py-12"
     >
       {/* HEADER */}
-      <div className="text-center max-w-3xl mb-24">
-        <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-6">
+      <div className="text-center max-w-2xl mb-10">
+        <h2 className="text-2xl md:text-3xl font-bold text-gradient mb-3">
           Featured Projects
         </h2>
-        <p className="text-foreground/70 leading-relaxed">
+        <p className="text-foreground/70 text-sm md:text-base leading-relaxed">
           A selection of real-world IoT, AI and full-stack systems I designed and developed.
         </p>
       </div>
 
       {/* GRID */}
-      <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3 w-full max-w-6xl">
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 w-full max-w-5xl">
         {visibleProjects.map((project, index) => {
           const { label, Icon, disabled } = getLinkMeta(project.link);
           const showFallback = !project.image || failedImages[project.title];
 
-          const Card = (
+          return (
             <div key={index} className="flex flex-col group">
               {/* THUMBNAIL */}
               <div
-                className="relative w-full aspect-video mb-5 overflow-hidden rounded-xl"
+                className="relative w-full aspect-video mb-3 overflow-hidden rounded-xl"
                 style={{
                   border: "1px solid var(--border)",
                   background: "var(--muted, rgba(128,128,128,0.08))",
@@ -103,7 +103,7 @@ export const Projects = () => {
                     className="w-full h-full flex flex-col items-center justify-center gap-2"
                     style={{ color: "var(--foreground)", opacity: 0.35 }}
                   >
-                    <ImageOff size={22} />
+                    <ImageOff size={20} />
                     <span className="text-xs">Preview coming soon</span>
                   </div>
                 ) : (
@@ -118,18 +118,18 @@ export const Projects = () => {
               </div>
 
               <span
-                className="text-xs font-medium tracking-wide mb-3"
+                className="text-xs font-medium tracking-wide mb-1.5"
                 style={{ color: "var(--primary)" }}
               >
                 {project.category}
               </span>
 
-              <h3 className="text-lg font-semibold mb-2" style={{ color: "var(--foreground)" }}>
+              <h3 className="text-sm md:text-base font-semibold mb-1.5" style={{ color: "var(--foreground)" }}>
                 {project.title}
               </h3>
 
               <p
-                className="text-sm mb-6 flex-1"
+                className="text-xs md:text-sm mb-3 flex-1"
                 style={{ color: "var(--foreground)", opacity: 0.7 }}
               >
                 {project.description}
@@ -137,7 +137,7 @@ export const Projects = () => {
 
               {disabled ? (
                 <span
-                  className="inline-flex items-center gap-2 text-sm cursor-default"
+                  className="inline-flex items-center gap-1.5 text-xs cursor-default"
                   style={{ color: "var(--foreground)", opacity: 0.4 }}
                 >
                   {label}
@@ -147,28 +147,26 @@ export const Projects = () => {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm w-fit transition-colors"
+                  className="inline-flex items-center gap-1.5 text-xs w-fit transition-colors"
                   style={{ color: "var(--foreground)", opacity: 0.75 }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = "var(--primary)")}
                   onMouseLeave={(e) => (e.currentTarget.style.color = "var(--foreground)")}
                 >
-                  <Icon size={16} />
+                  <Icon size={14} />
                   {label}
                 </a>
               )}
             </div>
           );
-
-          return Card;
         })}
       </div>
 
       {/* PAGINATION */}
-      <div className="mt-16 flex items-center gap-2">
+      <div className="mt-8 flex items-center gap-2">
         <button
           onClick={() => setPage((p) => Math.max(p - 1, 0))}
           disabled={page === 0}
-          className="px-4 py-2 rounded-lg text-sm transition disabled:opacity-30"
+          className="px-3 py-1.5 rounded-lg text-xs transition disabled:opacity-30"
           style={{ border: "1px solid var(--border)", color: "var(--foreground)" }}
         >
           Prev
@@ -178,7 +176,7 @@ export const Projects = () => {
           <button
             key={i}
             onClick={() => setPage(i)}
-            className="w-9 h-9 rounded-lg text-sm transition"
+            className="w-7 h-7 rounded-lg text-xs transition"
             style={
               page === i
                 ? { background: "var(--primary)", color: "white", border: "1px solid var(--primary)" }
@@ -192,7 +190,7 @@ export const Projects = () => {
         <button
           onClick={() => setPage((p) => Math.min(p + 1, totalPages - 1))}
           disabled={page === totalPages - 1}
-          className="px-4 py-2 rounded-lg text-sm transition disabled:opacity-30"
+          className="px-3 py-1.5 rounded-lg text-xs transition disabled:opacity-30"
           style={{ border: "1px solid var(--border)", color: "var(--foreground)" }}
         >
           Next
