@@ -5,17 +5,17 @@ import { Projects } from "../components/sections/Projects";
 import { Contact } from "../components/sections/Contact";
 import { Navbar } from "../components/layout/Navbar";
 import { Footer } from "../components/layout/Footer";
-import { StarBackground } from "../components/ui/StarBackground";
+// import { StarBackground } from "../components/ui/StarBackground";
+import { Background } from "/src/components/ui/Background.jsx";
 import { Certificates } from "../components/sections/Certificates";
 // import { SmartScrollIndicator } from "../components/ui/ScrollIndicator";
 
 export const Home = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden bg-black">
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
 
       {/* Background Effects */}
-      <StarBackground />
-      
+      <Background />            
       {/* Navbar */}
       <Navbar />
       

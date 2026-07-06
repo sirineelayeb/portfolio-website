@@ -1,76 +1,107 @@
-import React from 'react';
+import React from "react";
 
-const skills = [
-  { name: 'React.js',             level: 92, icon: '⚛️' },
-  { name: 'AI & Machine Learning',          level: 60, icon: '🧠' },
-  { name: 'Python / TensorFlow',            level: 60, icon: '🐍' },
-  { name: 'Node.js & Express',              level: 75, icon: '⚡' },
-  { name: 'IoT (ESP32, MQTT, WebSocket)',   level: 80, icon: '📡' },
-  { name: 'Docker & Cloud',                 level: 50, icon: '☁️' },
-  { name: 'LLMs & RAG Systems',             level: 50, icon: '🤖' },
-  { name: 'Databases (MySQL, MongoDB & PostgreSQL)', level: 80, icon: '🗄️' },
-  { name: 'Mobile & AR Development',        level: 70, icon: '📱' },
+const skillGroups = [
+  {
+    category: "Frontend",
+    skills: [
+      { name: "React.js", level: 3 },
+      { name: "Angular", level: 2 },
+    ],
+  },
+  {
+    category: "Backend & Data",
+    skills: [
+      { name: "Node.js & Express", level: 3 },
+      { name: "Spring Boot", level: 2 },
+      { name: "Databases (MongoDB, MySQL, PostgreSQL)", level: 3 },
+    ],
+  },
+  {
+    category: "IoT",
+    skills: [{ name: "IoT (ESP32, MQTT, WebSocket)", level: 3 }],
+  },
+  {
+    category: "AI & Machine Learning",
+    skills: [
+      { name: "AI & Machine Learning", level: 2 },
+      { name: "Python (Scikit-learn)", level: 2 },
+      { name: "LLMs & RAG Systems", level: 2 },
+    ],
+  },
+  {
+    category: "DevOps",
+    skills: [{ name: "Docker & CI/CD", level: 2 }],
+  },
 ];
+
+const levelLabels = { 1: "Beginner", 2: "Intermediate", 3: "Advanced" };
+
+const ProficiencyDots = ({ level }) => (
+  <div className="flex gap-1" aria-label={levelLabels[level]}>
+    {[1, 2, 3].map((dot) => (
+      <span
+        key={dot}
+        className="w-1.5 h-1.5 rounded-full"
+        style={{
+          backgroundColor: dot <= level ? "var(--primary)" : "var(--border)",
+        }}
+      />
+    ))}
+  </div>
+);
 
 export const Skills = () => {
   return (
-    <section id="skills" className="py-20 lg:py-32 overflow-hidden relative">
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-20 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-10 right-1/4 w-80 h-80 bg-secondary/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-      </div>
+    <section
+      id="skills"
+      className="min-h-screen flex items-center justify-center py-20"
+    >
+      <div className="container mx-auto px-6 max-w-5xl flex flex-col items-center text-center">
 
-      <div className="container mx-auto px-6 md:px-12">
-        <div className="text-center mb-20 md:mb-24 lg:mb-32 xl:mb-40">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            <span className="text-gradient">Skills</span> & Expertise
-          </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            A comprehensive toolkit spanning AI development, IoT systems, and full-stack engineering.
-          </p>
-        </div>
+        {/* Title */}
+        <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-6">
+          Skills & Expertise
+        </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 max-w-5xl mx-auto">
-          {skills.map((skill, index) => (
-            <div key={skill.name} className="group relative" style={{ animationDelay: `${index * 100}ms` }}>
-              <div className="card-glass p-6 lg:p-8 rounded-2xl border border-white/10 backdrop-blur-xl hover-lift transition-all duration-500">
-                <div className="flex items-center justify-between mb-3">
-                  <div className="flex items-center gap-4">
-                    <div className="text-2xl lg:text-3xl">{skill.icon}</div>
-                    <h3 className="text-lg lg:text-xl font-semibold text-foreground">
-                      {skill.name}
-                    </h3>
-                  </div>
-                  <span className="text-2xl font-bold text-primary opacity-0 group-hover:opacity-100 transition-opacity">
-                    {skill.level}%
-                  </span>
-                </div>
+        {/* Paragraph */}
+        <p className="text-foreground/70 max-w-2xl mb-20 leading-relaxed text-center">
+          I focus on software development, modern web applications, IoT systems,
+          and AI technologies. My goal is to continuously learn and work with
+          new technologies to build scalable, efficient, and real-world solutions.
+        </p>
 
-                <div className="relative h-3 bg-gray-200 dark:bg-gray-800 rounded-full overflow-hidden">
-                  <div
-                    className="absolute inset-y-0 left-0 bg-gradient-to-r from-primary to-secondary rounded-full transition-all duration-2000 ease-out origin-left"
-                    style={{ width: `${skill.level}%`, transform: `scaleX(${skill.level / 100})` }}
+        {/* Skills by category */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-14 w-full text-left">
+          {skillGroups.map((group) => (
+            <div key={group.category}>
+              <h3
+                className="text-xs font-semibold tracking-wider uppercase mb-4"
+                style={{ color: "var(--primary)" }}
+              >
+                {group.category}
+              </h3>
+
+              <ul className="space-y-4">
+                {group.skills.map((skill) => (
+                  <li
+                    key={skill.name}
+                    className="flex items-center justify-between gap-4 pb-3"
+                    style={{ borderBottom: "1px solid var(--border)" }}
                   >
-                    <div className="absolute inset-0 bg-white/30 animate-pulse"></div>
-                  </div>
-                  <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12 group-hover:animate-shine"></div>
-                </div>
-
-                <div className="mt-2 text-right">
-                  <span className="text-sm font-medium text-gray-500 dark:text-gray-400 opacity-0 lg:opacity-100 group-hover:opacity-100 transition-opacity">
-                    {skill.level < 60 ? 'Learning' : skill.level < 80 ? 'Proficient' : 'Expert'}
-                  </span>
-                </div>
-              </div>
+                    <span
+                      className="text-sm md:text-base"
+                      style={{ color: "var(--foreground)" }}
+                    >
+                      {skill.name}
+                    </span>
+                    <ProficiencyDots level={skill.level} />
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
 
-        <div className="text-center mt-16">
-          <p className="text-gray-600 dark:text-gray-400">
-            Always learning new tools & frameworks
-          </p>
-        </div>
       </div>
     </section>
   );

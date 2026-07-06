@@ -2,29 +2,44 @@ export const About = () => {
   return (
     <section
       id="about"
-      className="min-h-screen flex items-center justify-center py-20 px-4"
+      className="min-h-screen flex items-center justify-center py-28 px-6"
     >
-      <div className="text-center max-w-3xl mx-auto">
-        {/* Section Title */}
-        <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-12 animate-fade-in">
+      <div className="max-w-4xl mx-auto text-center space-y-10">
+
+        {/* Title */}
+        <h2 className="text-4xl md:text-5xl font-bold text-gradient animate-fade-in">
           About Me
         </h2>
 
-        {/* Intro Text */}
-        <p className="text-gray-700 dark:text-gray-300 text-lg md:text-xl mb-6 leading-relaxed">
-          I fell in love with programming and technology early on. My field of interest is 
-          <span className="text-primary font-semibold"> IoT, AI, and software development</span>. 
-          I enjoy learning new tools and technologies to create modern, scalable, and intelligent solutions.
-        </p>
+        {/* Card */}
+        <div className="card-glass rounded-2xl p-8 md:p-10 space-y-6 text-center">
 
-        <p className="text-gray-700 dark:text-gray-300 text-lg md:text-xl mb-8 leading-relaxed">
-          My goal is to combine my knowledge in IoT, AI, and software engineering to build innovative systems that solve real-world problems and make a positive impact.
-        </p>
+          <p className="text-foreground/80 text-lg md:text-xl leading-relaxed">
+            I am passionate about programming and technology, with a strong interest in{" "}
+            <span className="text-primary font-semibold">software development</span>.
+          </p>
 
-        {/* CTA Buttons */}
-        <div className="flex flex-wrap justify-center gap-4">
+          <p className="text-foreground/70 text-lg md:text-xl leading-relaxed">
+            My main focus is building modern applications using{" "}
+            <span className="text-primary font-semibold">new technologies</span>, especially in
+            software development, IoT, and AI systems. I enjoy exploring tools that improve
+            performance, scalability, and user experience.
+          </p>
+
+          <p className="text-foreground/70 text-lg md:text-xl leading-relaxed">
+            My goal is to work in{" "}
+            <span className="text-secondary font-semibold">software development</span>,
+            contribute to real-world projects, learn continuously, and build innovative
+            solutions using modern tech stacks.
+          </p>
+
+        </div>
+
+        {/* Buttons */}
+        <div className="flex flex-wrap justify-center gap-5 pt-4">
+
           <a
-            href="/CV_PFE_sirine_ELAYEB.pdf"  
+            href="/Syrine_Elayeb_Resume.pdf"
             target="_blank"
             className="btn btn-primary"
           >
@@ -39,7 +54,9 @@ export const About = () => {
           >
             Contact Me
           </button>
+
         </div>
+
       </div>
     </section>
   );

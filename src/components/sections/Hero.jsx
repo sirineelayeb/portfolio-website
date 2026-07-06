@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 const jobs = [
-  "IoT Master's Student",
+  "IoT Engineer",
   "AI & LLM Enthusiast",
   "Full Stack Developer",
   "IoT Developer"
@@ -52,13 +52,13 @@ export const Hero = () => {
 
           {/* Main Greeting */}
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold leading-tight tracking-tight">
-            <span className="block mb-2 text-3xl md:text-5xl lg:text-6xl text-gray-600 dark:text-gray-400 font-light">
+            <span className="block mb-2 text-3xl md:text-5xl lg:text-6xl text-gray-400 dark:text-gray-400 font-light">
               Hey, I'm
             </span>
             <span className="block mb-2 text-gradient">
               Sirine
             </span>
-            <span className="block text-5xl md:text-7xl lg:text-8xl bg-gradient-to-br from-gray-700 via-gray-900 to-gray-800 dark:from-purple-200 dark:via-blue-200 dark:to-indigo-300 bg-clip-text text-transparent">
+            <span className="block text-5xl md:text-7xl lg:text-8xl bg-gradient-to-br from-gray-700 via-gray-400 to-white-800 dark:from-purple-200 dark:via-blue-200 dark:to-indigo-300 bg-clip-text text-transparent">
               Elayeb
             </span>
           </h1>

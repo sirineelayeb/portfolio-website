@@ -1,13 +1,17 @@
 import { Moon, Sun } from "lucide-react";
 import { useState, useEffect } from "react";
 
+const getInitialTheme = () => {
+  if (typeof window === "undefined") return false;
+
+  const stored = localStorage.getItem("theme");
+  if (stored) return stored === "dark";
+
+  return window.matchMedia("(prefers-color-scheme: dark)").matches;
+};
+
 export const ThemeToggle = () => {
-  const [isDarkMode, setIsDarkMode] = useState(() => {
-    if (typeof window !== "undefined") {
-      return localStorage.getItem("theme") === "dark";
-    }
-    return false;
-  });
+  const [isDarkMode, setIsDarkMode] = useState(getInitialTheme);
 
   const toggleTheme = () => {
     setIsDarkMode((prev) => !prev);
@@ -15,6 +19,7 @@ export const ThemeToggle = () => {
 
   useEffect(() => {
     const root = document.documentElement;
+
     if (isDarkMode) {
       root.classList.add("dark");
       localStorage.setItem("theme", "dark");
@@ -25,20 +30,38 @@ export const ThemeToggle = () => {
   }, [isDarkMode]);
 
   return (
-   <button
-  onClick={toggleTheme}
-  aria-label="Toggle theme"
-  className="
-    p-3 rounded-full
-    bg-gray-100 dark:bg-gray-800
-    hover:bg-gray-200 dark:hover:bg-gray-700
-    shadow-lg hover:shadow-2xl
-    transition-all duration-300
-    flex items-center justify-center
-  "
->
-  {isDarkMode ? <Sun className="h-6 w-6 text-yellow-400" /> : <Moon className="h-6 w-6 text-blue-600" />}
-</button>
+    <button
+      onClick={toggleTheme}
+      aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
+      className="p-2 rounded-md transition-colors duration-300"
+      style={{
+        backgroundColor: "var(--card-bg)",
+        border: "1px solid var(--border)",
+        color: "var(--foreground)",
+      }}
+    >
+      <span
+        key={isDarkMode ? "sun" : "moon"}
+        className="block"
+        style={{
+          animation: "theme-icon-in 0.25s ease-out",
+        }}
+      >
+        {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}
+      </span>
 
+      <style>{`
+        @keyframes theme-icon-in {
+          from {
+            opacity: 0;
+            transform: rotate(-90deg) scale(0.6);
+          }
+          to {
+            opacity: 1;
+            transform: rotate(0deg) scale(1);
+          }
+        }
+      `}</style>
+    </button>
   );
 };
